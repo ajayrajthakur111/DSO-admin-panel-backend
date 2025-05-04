@@ -39,7 +39,7 @@ app.use(cookieParser());
 
 // Routes
 app.use('/api/auth', authRoutes);
-app.use('/api/', customerRoutes);
+app.use('/api', customerRoutes);
 app.use('/api/payment', paymentRoutes);
 
 
