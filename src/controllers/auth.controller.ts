@@ -23,8 +23,8 @@ export const register = async (req: Request, res: Response): Promise<void> => {
         res
             .cookie('token', token, {
                 httpOnly: true,
-                sameSite: 'lax',
-                secure: process.env.NODE_ENV === 'production',
+                sameSite: 'none',
+                secure: true,
                 maxAge: 7 * 24 * 60 * 60 * 1000,
             })
             .status(201)
@@ -55,8 +55,8 @@ export const login = async (req: Request, res: Response): Promise<void> => {
         res
             .cookie('token', token, {
                 httpOnly: true,
-                sameSite: 'lax',
-                secure: process.env.NODE_ENV === 'production',
+                sameSite: 'none',
+                secure: true,
                 maxAge: 7 * 24 * 60 * 60 * 1000,
             })
             .status(200)
@@ -129,8 +129,8 @@ export const verifyOtpAndRegister = async (req: Request, res: Response): Promise
         res
             .cookie('token', token, {
                 httpOnly: true,
-                sameSite: 'lax',
-                secure: process.env.NODE_ENV === 'production',
+                sameSite: 'none',
+                secure: true,
                 maxAge: 7 * 24 * 60 * 60 * 1000,
             })
             .status(201)
